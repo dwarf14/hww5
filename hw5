@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        HashSet set = new HashSet();
+        set.add(1);
+        set.add(5);
+        set.add(10);
+        System.out.println(set.contains(10));//true
+        set.remove(10);
+        System.out.println(set.contains(10));//false
+    }
+
+    public static class HashSet {
+        private List<Integer> els;
+
+        public HashSet() {
+            els = new ArrayList<>();
+        }
+
+        public boolean contains(int el) {
+            return els.contains(el);
+        }
+
+        public void add(int el) {
+            if (!els.contains(el)) {
+
+                els.add(el);
+            }
+        }
+
+        public void remove(int el) {
+
+            els.remove(Integer.valueOf(el));
+        }
+    }
+}
